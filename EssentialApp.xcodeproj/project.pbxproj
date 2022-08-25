@@ -24,6 +24,7 @@
 		3A7FC15028B78F9B00E3B7EA /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC14F28B78F9B00E3B7EA /* SharedTestHelpers.swift */; };
 		3A7FC15228B7AB1900E3B7EA /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC15128B7AB1900E3B7EA /* FeedLoaderCacheDecoratorTests.swift */; };
 		3A7FC15428B7AD5A00E3B7EA /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC15328B7AD5A00E3B7EA /* FeedLoaderStub.swift */; };
+		3A7FC15628B7AE7200E3B7EA /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC15528B7AE7200E3B7EA /* XCTestCase+FeedLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		3A7FC14F28B78F9B00E3B7EA /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		3A7FC15128B7AB1900E3B7EA /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		3A7FC15328B7AD5A00E3B7EA /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
+		3A7FC15528B7AE7200E3B7EA /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7FC14D28B78F3B00E3B7EA /* XCTestCase+MemoryLeakTracking.swift */,
+				3A7FC15528B7AE7200E3B7EA /* XCTestCase+FeedLoader.swift */,
 				3A7FC14F28B78F9B00E3B7EA /* SharedTestHelpers.swift */,
 				3A7FC15328B7AD5A00E3B7EA /* FeedLoaderStub.swift */,
 			);
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7FC15028B78F9B00E3B7EA /* SharedTestHelpers.swift in Sources */,
+				3A7FC15628B7AE7200E3B7EA /* XCTestCase+FeedLoader.swift in Sources */,
 				3A7FC15228B7AB1900E3B7EA /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				3A7FC14928B75DC800E3B7EA /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				0895DA9E234B3B980031BB2D /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
