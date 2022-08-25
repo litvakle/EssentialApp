@@ -21,9 +21,15 @@ public final class FeedLoaderCacheDecorator: FeedLoader {
     public func load(completion: @escaping (FeedLoader.Result) -> Void) {
         decoratee.load { [weak self] result in
             if case let .success(feed) = result {
-                self?.cache.save(feed, completion: { _ in })
+                self?.cache.saveIgnoringResult(feed)
             }
             completion(result)
         }
+    }
+}
+
+private extension FeedCache {
+    func saveIgnoringResult(_ feed: [FeedImage]) {
+        save(feed) { _ in }
     }
 }
