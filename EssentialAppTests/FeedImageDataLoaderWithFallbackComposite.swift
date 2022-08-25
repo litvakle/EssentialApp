@@ -60,69 +60,30 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
     
     func test_loadImageData_deliversPrimaryDataOnPrimaryLoaderSucceed() {
         let (sut, primaryLoader, _) = makeSUT()
-        let url = anyURL()
         let expectedData = anyData()
         
-        let exp = expectation(description: "Wait for load completion")
-        
-        _ = sut.loadImageData(from: url) { result in
-            switch result {
-            case let .success(receivedData):
-                XCTAssertEqual(receivedData, expectedData)
-            default:
-                XCTFail("Expected to successfully receive data, got \(result) instead")
-            }
-            exp.fulfill()
-        }
-        
-        primaryLoader.completeSuccesfully(with: expectedData)
-        
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toCompleteWith: .success(expectedData), when: {
+            primaryLoader.completeSuccesfully(with: expectedData)
+        })
     }
     
     func test_loadImageData_deliversFallbackDataOnPrimaryLoaderFailure() {
         let (sut, primaryLoader, fallbackLoader) = makeSUT()
-        let url = anyURL()
         let expectedData = anyData()
         
-        let exp = expectation(description: "Wait for load completion")
-        
-        _ = sut.loadImageData(from: url) { result in
-            switch result {
-            case let .success(receivedData):
-                XCTAssertEqual(receivedData, expectedData)
-            default:
-                XCTFail("Expected to successfully receive data, got \(result) instead")
-            }
-            exp.fulfill()
-        }
-        
-        primaryLoader.complete(withError: anyNSError())
-        fallbackLoader.completeSuccesfully(with: expectedData)
-        
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toCompleteWith: .success(expectedData), when: {
+            primaryLoader.complete(withError: anyNSError())
+            fallbackLoader.completeSuccesfully(with: expectedData)
+        })
     }
     
     func test_loadImageData_deliversErrorOnBothPrimaryAndFallbackFailure() {
         let (sut, primaryLoader, fallbackLoader) = makeSUT()
-        let url = anyURL()
         
-        let exp = expectation(description: "Wait for load completion")
-        
-        _ = sut.loadImageData(from: url) { result in
-            switch result {
-            case .failure:
-                break
-            default:
-                XCTFail("Expected to receive error, got \(result) instead")
-            }
-            exp.fulfill()
-        }
-        
-        primaryLoader.complete(withError: anyNSError())
-        fallbackLoader.complete(withError: anyNSError())
-        
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toCompleteWith: .failure(anyNSError()), when: {
+            primaryLoader.complete(withError: anyNSError())
+            fallbackLoader.complete(withError: anyNSError())
+        })
     }
     
     // MARK: - Helpers
@@ -155,6 +116,29 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
     
     private func anyNSError() -> NSError {
         return NSError(domain: "any error", code: 0)
+    }
+    
+    private func expect(_ sut: FeedImageDataLoaderWithFallbackComposite, toCompleteWith expectedResult: FeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+        let url = anyURL()
+        
+        let exp = expectation(description: "Wait for load completion")
+        
+        _ = sut.loadImageData(from: url) { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedImageData), .success(expectedImageData)):
+                XCTAssertEqual(receivedImageData, expectedImageData, file: file, line: line)
+            case (.failure, .failure):
+                break
+            default:
+                XCTFail("Expected to complete with \(expectedResult), got \(receivedResult) instead")
+            }
+            
+            exp.fulfill()
+        }
+        
+        action()
+        
+        wait(for: [exp], timeout: 1.0)
     }
     
     class ImageDataLoaderSpy: FeedImageDataLoader {
