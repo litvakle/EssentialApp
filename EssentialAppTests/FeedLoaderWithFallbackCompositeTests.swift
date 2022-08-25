@@ -76,5 +76,4 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
             completion(result)
         }
     }
-    
 }
