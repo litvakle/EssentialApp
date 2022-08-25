@@ -26,6 +26,7 @@ class FeedImageDataLoaderWithFallbackComposite: FeedImageDataLoader {
     }
     
     func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+        _ = primary.loadImageData(from: url, completion: completion)
         return Task()
     }
 }
@@ -36,6 +37,18 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
         
         XCTAssertTrue(primaryLoader.loadedURLs.isEmpty)
         XCTAssertTrue(fallbackLoader.loadedURLs.isEmpty)
+    }
+    
+    func test_loadImageData_loadsFromPrimaryLoaderFirst() {
+        let (sut, primaryLoader, fallbackLoader) = makeSUT()
+        let url = anyURL()
+        
+        _ = sut.loadImageData(from: url) { _ in
+            
+        }
+        
+        XCTAssertEqual(primaryLoader.loadedURLs, [url])
+        XCTAssertEqual(fallbackLoader.loadedURLs, [])
     }
     
     // MARK: - Helpers
@@ -56,6 +69,10 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
         addTeardownBlock { [weak instance] in
             XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
         }
+    }
+    
+    func anyURL() -> URL {
+        return URL(string: "http://any-url.com")!
     }
     
     class ImageDataLoaderSpy: FeedImageDataLoader {
