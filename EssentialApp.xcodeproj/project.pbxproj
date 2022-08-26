@@ -28,6 +28,7 @@
 		3A7FC15A28B7B88300E3B7EA /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC15928B7B88300E3B7EA /* FeedLoaderCacheDecorator.swift */; };
 		3A7FC15C28B872DF00E3B7EA /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC15B28B872DF00E3B7EA /* FeedImageDataLoaderCacheDecoratorTests.swift */; };
 		3A7FC15E28B87E7B00E3B7EA /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC15D28B87E7B00E3B7EA /* FeedImageDataLoaderSpy.swift */; };
+		3A7FC16028B87F1E00E3B7EA /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC15F28B87F1E00E3B7EA /* XCTestCase+FeedImageDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		3A7FC15928B7B88300E3B7EA /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 		3A7FC15B28B872DF00E3B7EA /* FeedImageDataLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		3A7FC15D28B87E7B00E3B7EA /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
+		3A7FC15F28B87F1E00E3B7EA /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				3A7FC14D28B78F3B00E3B7EA /* XCTestCase+MemoryLeakTracking.swift */,
 				3A7FC15528B7AE7200E3B7EA /* XCTestCase+FeedLoader.swift */,
+				3A7FC15F28B87F1E00E3B7EA /* XCTestCase+FeedImageDataLoader.swift */,
 				3A7FC14F28B78F9B00E3B7EA /* SharedTestHelpers.swift */,
 				3A7FC15328B7AD5A00E3B7EA /* FeedLoaderStub.swift */,
 				3A7FC15D28B87E7B00E3B7EA /* FeedImageDataLoaderSpy.swift */,
@@ -287,6 +290,7 @@
 				3A7FC15028B78F9B00E3B7EA /* SharedTestHelpers.swift in Sources */,
 				3A7FC15C28B872DF00E3B7EA /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */,
 				3A7FC15628B7AE7200E3B7EA /* XCTestCase+FeedLoader.swift in Sources */,
+				3A7FC16028B87F1E00E3B7EA /* XCTestCase+FeedImageDataLoader.swift in Sources */,
 				3A7FC15228B7AB1900E3B7EA /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				3A7FC15E28B87E7B00E3B7EA /* FeedImageDataLoaderSpy.swift in Sources */,
 				3A7FC14928B75DC800E3B7EA /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
