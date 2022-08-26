@@ -13,12 +13,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		guard let _ = (scene as? UIWindowScene) else { return }
 		
-//        let url = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
-//
-//        let session = URLSession(configuration: .ephemeral)
-//        let client = URLSessionHTTPClient(session: session)
-//        let remoteFeedLoader = RemoteFeedLoader(url: url, client: client)
-//        let RemoteImageLoader = RemoteFeedImageDataLoader(client: client)
+        let url = URL(string: "https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
+
+        let session = URLSession(configuration: .ephemeral)
+        let client = URLSessionHTTPClient(session: session)
+        let remoteFeedLoader = RemoteFeedLoader(url: url, client: client)
+        let RemoteImageLoader = RemoteFeedImageDataLoader(client: client)
+        
+        window?.rootViewController = FeedUIComposer.feedComposedWith(
+            feedLoader: remoteFeedLoader,
+            imageLoader: RemoteImageLoader)
 //
 //        let localStoreURL = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("feed-store.sqlite")
 //        let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
