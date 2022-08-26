@@ -32,6 +32,7 @@
 		3A7FC16428B8857900E3B7EA /* FeedImageDataLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC16328B8857900E3B7EA /* FeedImageDataLoaderCacheDecorator.swift */; };
 		3A7FC16C28B8AE1200E3B7EA /* EssentialAppUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC16B28B8AE1200E3B7EA /* EssentialAppUIAcceptanceTests.swift */; };
 		3A7FC17528B8CF0200E3B7EA /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC17428B8CF0200E3B7EA /* DebuggingSceneDelegate.swift */; };
+		3A7FC17728B8F6F400E3B7EA /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC17628B8F6F400E3B7EA /* SceneDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		3A7FC16928B8AE1100E3B7EA /* EssentialAppUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7FC16B28B8AE1200E3B7EA /* EssentialAppUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppUIAcceptanceTests.swift; sourceTree = "<group>"; };
 		3A7FC17428B8CF0200E3B7EA /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
+		3A7FC17628B8F6F400E3B7EA /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				3A7FC14828B75DC800E3B7EA /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				3A7FC15128B7AB1900E3B7EA /* FeedLoaderCacheDecoratorTests.swift */,
 				3A7FC15B28B872DF00E3B7EA /* FeedImageDataLoaderCacheDecoratorTests.swift */,
+				3A7FC17628B8F6F400E3B7EA /* SceneDelegateTests.swift */,
 				0895DA9F234B3B980031BB2D /* Info.plist */,
 			);
 			path = EssentialAppTests;
@@ -356,6 +359,7 @@
 				3A7FC15C28B872DF00E3B7EA /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */,
 				3A7FC15628B7AE7200E3B7EA /* XCTestCase+FeedLoader.swift in Sources */,
 				3A7FC16028B87F1E00E3B7EA /* XCTestCase+FeedImageDataLoader.swift in Sources */,
+				3A7FC17728B8F6F400E3B7EA /* SceneDelegateTests.swift in Sources */,
 				3A7FC15228B7AB1900E3B7EA /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				3A7FC15E28B87E7B00E3B7EA /* FeedImageDataLoaderSpy.swift in Sources */,
 				3A7FC14928B75DC800E3B7EA /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
