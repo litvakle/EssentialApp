@@ -9,7 +9,11 @@ import EssentialFeediOS
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
-
+    
+    let localStoreURL = NSPersistentContainer
+        .defaultDirectoryURL()
+        .appendingPathComponent("feed-store.sqlite")
+    
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		guard let _ = (scene as? UIWindowScene) else { return }
 		
@@ -18,14 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let client = makeRemoteClient()
         let remoteFeedLoader = RemoteFeedLoader(url: url, client: client)
         let RemoteImageLoader = RemoteFeedImageDataLoader(client: client)
-        
-        let localStoreURL = NSPersistentContainer
-            .defaultDirectoryURL()
-            .appendingPathComponent("feed-store.sqlite")
-        
-        if CommandLine.arguments.contains("-reset") {
-            try? FileManager.default.removeItem(at: localStoreURL)
-        }
         
         let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
         let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
@@ -44,13 +40,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     cache: localImageLoader)))
 	}
     
-    private func makeRemoteClient() -> HTTPClient {
-        switch UserDefaults.standard.string(forKey: "connectivity") {
-        case "offline":
-            return AlwaysFailingHTTPClient()
-        default:
-            return URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
-        }
+    func makeRemoteClient() -> HTTPClient {
+        return URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }
     
     private class AlwaysFailingHTTPClient: HTTPClient {
