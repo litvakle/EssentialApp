@@ -82,9 +82,9 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (FeedImageDataLoaderWithFallbackComposite, ImageDataLoaderSpy, ImageDataLoaderSpy) {
-        let primaryLoader = ImageDataLoaderSpy()
-        let fallbackLoader = ImageDataLoaderSpy()
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (FeedImageDataLoaderWithFallbackComposite, FeedImageDataLoaderSpy, FeedImageDataLoaderSpy) {
+        let primaryLoader = FeedImageDataLoaderSpy()
+        let fallbackLoader = FeedImageDataLoaderSpy()
         let sut = FeedImageDataLoaderWithFallbackComposite(primary: primaryLoader, fallback: fallbackLoader)
         
         trackForMemoryLeaks(sut, file: file, line: line)
@@ -115,38 +115,5 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
         action()
         
         wait(for: [exp], timeout: 1.0)
-    }
-    
-    class ImageDataLoaderSpy: FeedImageDataLoader {
-        private var messages = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
-        
-        var loadedURLs: [URL] {
-            return messages.map { $0.url }
-        }
-        
-        var cancelledURLs = [URL]()
-        
-        private struct Task: FeedImageDataLoaderTask {
-            var callback: () -> Void
-            
-            func cancel() {
-                callback()
-            }
-        }
-        
-        func completeSuccesfully(with data: Data, at index: Int = 0) {
-            messages[index].completion(.success(data))
-        }
-        
-        func complete(withError error: Error, at index: Int = 0) {
-            messages[index].completion(.failure(error))
-        }
-        
-        func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
-            messages.append((url, completion))
-            return Task { [weak self] in
-                self?.cancelledURLs.append(url)
-            }
-        }
     }
 }
