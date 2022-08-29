@@ -39,6 +39,7 @@
 		3A7FC19528B8FA4D00E3B7EA /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC18C28B8FA4D00E3B7EA /* UIButton+TestHelpers.swift */; };
 		3A7FC19728B8FA7700E3B7EA /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC19628B8FA7700E3B7EA /* FeedUIIntegrationTests.swift */; };
 		3A7FC19928B8FC9400E3B7EA /* FeedAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC19828B8FC9400E3B7EA /* FeedAcceptanceTests.swift */; };
+		3AA8337A28BCBFA000B0B281 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8337928BCBFA000B0B281 /* CombineHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		3A7FC18C28B8FA4D00E3B7EA /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 		3A7FC19628B8FA7700E3B7EA /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
 		3A7FC19828B8FC9400E3B7EA /* FeedAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAcceptanceTests.swift; sourceTree = "<group>"; };
+		3AA8337928BCBFA000B0B281 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				3A7FC17B28B8FA1F00E3B7EA /* FeedUIComposer.swift */,
 				3A7FC17C28B8FA1F00E3B7EA /* WeakRefVirtualProxy.swift */,
+				3AA8337928BCBFA000B0B281 /* CombineHelpers.swift */,
 				3A7FC17928B8FA1F00E3B7EA /* FeedImageDataLoaderPresentationAdapter.swift */,
 				3A7FC17D28B8FA1F00E3B7EA /* FeedLoaderPresentationAdapter.swift */,
 				3A7FC17A28B8FA1F00E3B7EA /* FeedViewAdapter.swift */,
@@ -312,6 +315,7 @@
 				3A7FC18328B8FA1F00E3B7EA /* FeedLoaderPresentationAdapter.swift in Sources */,
 				3A7FC18228B8FA1F00E3B7EA /* WeakRefVirtualProxy.swift in Sources */,
 				0895DA89234B3B950031BB2D /* SceneDelegate.swift in Sources */,
+				3AA8337A28BCBFA000B0B281 /* CombineHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
