@@ -12,7 +12,10 @@ public final class FeedUIComposer {
 	
     private typealias PresentationAdapter = LoadResourcePresentationAdapter<[FeedImage], FeedViewAdapter>
     
-    public static func feedComposedWith(feedLoader: @escaping () -> AnyPublisher<[FeedImage], Error>, imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher) -> FeedViewController {
+    public static func feedComposedWith(
+        feedLoader: @escaping () -> AnyPublisher<[FeedImage], Error>,
+        imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher
+    ) -> FeedViewController {
         let presentationAdapter = PresentationAdapter(
             loader: { feedLoader().dispatchOnMainQueue() })
 		
