@@ -39,6 +39,8 @@
 		3A7FC19728B8FA7700E3B7EA /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC19628B8FA7700E3B7EA /* FeedUIIntegrationTests.swift */; };
 		3A7FC19928B8FC9400E3B7EA /* FeedAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FC19828B8FC9400E3B7EA /* FeedAcceptanceTests.swift */; };
 		3AA8337A28BCBFA000B0B281 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA8337928BCBFA000B0B281 /* CombineHelpers.swift */; };
+		3ADFDABC28C5F8B300385A39 /* CommentsUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFDABB28C5F8B300385A39 /* CommentsUIIntegrationTests.swift */; };
+		3ADFDABE28C5FA5600385A39 /* CommentsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFDABD28C5FA5600385A39 /* CommentsUIComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		3A7FC19628B8FA7700E3B7EA /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
 		3A7FC19828B8FC9400E3B7EA /* FeedAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAcceptanceTests.swift; sourceTree = "<group>"; };
 		3AA8337928BCBFA000B0B281 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
+		3ADFDABB28C5F8B300385A39 /* CommentsUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIIntegrationTests.swift; sourceTree = "<group>"; };
+		3ADFDABD28C5FA5600385A39 /* CommentsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 				3AA8337928BCBFA000B0B281 /* CombineHelpers.swift */,
 				3A7FC17D28B8FA1F00E3B7EA /* LoadResourcePresentationAdapter.swift */,
 				3A7FC17A28B8FA1F00E3B7EA /* FeedViewAdapter.swift */,
+				3ADFDABD28C5FA5600385A39 /* CommentsUIComposer.swift */,
 				0895DA86234B3B950031BB2D /* AppDelegate.swift */,
 				0895DA88234B3B950031BB2D /* SceneDelegate.swift */,
 				0895DA8C234B3B950031BB2D /* Main.storyboard */,
@@ -167,6 +172,7 @@
 				3A7FC19628B8FA7700E3B7EA /* FeedUIIntegrationTests.swift */,
 				3A7FC17628B8F6F400E3B7EA /* SceneDelegateTests.swift */,
 				3A7FC19828B8FC9400E3B7EA /* FeedAcceptanceTests.swift */,
+				3ADFDABB28C5F8B300385A39 /* CommentsUIIntegrationTests.swift */,
 				0895DA9F234B3B980031BB2D /* Info.plist */,
 			);
 			path = EssentialAppTests;
@@ -312,6 +318,7 @@
 				3A7FC18228B8FA1F00E3B7EA /* WeakRefVirtualProxy.swift in Sources */,
 				0895DA89234B3B950031BB2D /* SceneDelegate.swift in Sources */,
 				3AA8337A28BCBFA000B0B281 /* CombineHelpers.swift in Sources */,
+				3ADFDABE28C5FA5600385A39 /* CommentsUIComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +344,7 @@
 				3A7FC15428B7AD5A00E3B7EA /* FeedLoaderStub.swift in Sources */,
 				3A7FC19728B8FA7700E3B7EA /* FeedUIIntegrationTests.swift in Sources */,
 				3A7FC14E28B78F3B00E3B7EA /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				3ADFDABC28C5F8B300385A39 /* CommentsUIIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
