@@ -13,7 +13,7 @@ import EssentialApp
 import EssentialFeed
 import EssentialFeediOS
 
-class CommentsUIIntegrationTests: FeedUIIntegrationTests {
+class CommentsUIIntegrationTests: XCTestCase {
     func test_commentsView_hasTitle() {
         let (sut, _) = makeSUT()
         
@@ -96,19 +96,18 @@ class CommentsUIIntegrationTests: FeedUIIntegrationTests {
     
     func test_loadCommentsCompletion_rendersErrorMessageOnErrorUntilNextReload() {
         let (sut, loader) = makeSUT()
+        
         sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.errorMessage, nil)
         
-        let exp = expectation(description: "Wait for background queue")
+        loader.completeCommentsLoadingWithError(at: 0)
+        XCTAssertEqual(sut.errorMessage, loadError)
         
-        DispatchQueue.global().async {
-            loader.completeCommentsLoading(at: 0)
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 1.0)
+        sut.simulateErrorViewTap()
+        XCTAssertEqual(sut.errorMessage, nil)
     }
     
-    override func test_tapOnErrorView_hidesErrorMessage() {
+    func test_tapOnErrorView_hidesErrorMessage() {
         let (sut, loader) = makeSUT()
         
         sut.loadViewIfNeeded()
